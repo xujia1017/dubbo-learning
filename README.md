@@ -1,2 +1,2 @@
 # dubbo-learning
-dubbo学习工程
+dubbo学习Demo工程
