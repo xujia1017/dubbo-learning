@@ -43,5 +43,4 @@ public class OrderServiceImpl implements OrderService {
 		return Arrays.asList(new UserAddress(10, "测试地址", "1", "测试", "测试", "Y"));
 	}
 
-
 }
