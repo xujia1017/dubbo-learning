@@ -28,10 +28,9 @@ public class OrderServiceImpl implements OrderService {
 	@Reference(loadbalance="random",timeout=1000) //dubbo直连
 	private UserService userService;
 
-	@HystrixCommand(fallbackMethod="hello")
+	@HystrixCommand(fallbackMethod="hello") //出错后调用容错方法
 	@Override
 	public List<UserAddress> initOrder(String userId) {
-		// TODO Auto-generated method stub
 		System.out.println("用户id："+userId);
 
 		//1、查询用户的收货地址
@@ -40,10 +39,7 @@ public class OrderServiceImpl implements OrderService {
 		return addressList;
 	}
 
-
 	public List<UserAddress> hello(String userId) {
-		// TODO Auto-generated method stub
-
 		return Arrays.asList(new UserAddress(10, "测试地址", "1", "测试", "测试", "Y"));
 	}
 
